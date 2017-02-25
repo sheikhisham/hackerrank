@@ -3,12 +3,17 @@ package hish.hr.journeytomoon;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * https://www.hackerrank.com/challenges/journey-to-the-moon [SOLVED]
+ * 
+ * @author shisham
+ * 
+ */
 public class DisjointSet {
 	static class Node {
 		long data;
@@ -113,16 +118,16 @@ public class DisjointSet {
 		}
 
 		long[] rightElemsCount = new long[listSizes.length];
-		for (int o = listSizes.length - 1, b=0; o >= 0; o--) {
+		for (int o = listSizes.length - 1, b = 0; o >= 0; o--) {
 			rightElemsCount[o] = b;
-			b += listSizes[o]; 
+			b += listSizes[o];
 		}
-		
+
 		long cmb = 0;
-		for(int o=0;o<listSizes.length;o++) {
+		for (int o = 0; o < listSizes.length; o++) {
 			cmb += listSizes[o] * rightElemsCount[o];
 		}
-//		System.out.println(Arrays.toString(rightElemsCount));
+		// System.out.println(Arrays.toString(rightElemsCount));
 		System.out.println(cmb);
 	}
 
